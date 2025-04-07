@@ -642,6 +642,9 @@ final class Utilities
 				$GLOBALS[ 'text_direction' ] = $pll_lang->is_rtl ? 'rtl' : 'ltr';
 			} else {
 				//20190630: old code used in previous versions of this plugin
+				if (!$polylang->curlang) {
+					$polylang->curlang = new \stdClass();
+				}
 				$polylang->curlang->locale = $languageLocale;
 			}
 			// Cache miss
